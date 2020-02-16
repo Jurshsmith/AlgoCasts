@@ -31,17 +31,53 @@
 // }
 
 //another solution
-function steps(n) {
-    let pounds = "";
+// function steps(n) {
+//     let pounds = "";
 
-    for (let i = 1; i <= n; i++){
-        pounds += "#";
-        for (let j = 0; j < n - i; j++){
-            pounds += " ";
-        }
-        console.log(pounds, pounds.length);
-        pounds = pounds.trim();
+//     for (let i = 1; i <= n; i++){
+//         pounds += "#";
+//         for (let j = 0; j < n - i; j++){
+//             pounds += " ";
+//         }
+//         console.log(pounds, pounds.length);
+//         pounds = pounds.trim();
+//     }
+// }
+
+//another solution
+// function steps(n) {
+
+//     for (let i = 0; i < n; i++){
+//         let pounds = "";
+//         for (let j = 0; j < n ; j++){
+//             if (j <= i){
+//                 pounds += "#";
+//             } else {
+//                 pounds += " ";
+//             }
+//         }
+//         console.log(pounds);
+//     }
+// }
+
+
+//recursive solution
+function steps(n, m=0, l=0, pounds=""){
+    if (n === m){
+      return;
     }
+    if (l === n ){
+        console.log(pounds);
+        return steps(n, m + 1, 0, "");
+    }
+    if (l <= m){
+        pounds += "#";
+    } else{
+        pounds += " ";
+    }
+  
+    steps(n, m, l + 1, pounds);
+  
 }
 
 module.exports = steps;
