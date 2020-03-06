@@ -13,8 +13,26 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
-
 function pyramid(n) {
+
+    const totalLength = 2 * n - 1;
+
+    let middle = Math.ceil(totalLength/2);
+
+    for (let i=1; i <= n; i++){
+      let pyStr = "";
+      for (let j=1; j <= totalLength; j++){
+        if (i === 1){
+          pyStr += j === middle? "#" : " ";
+        } else {
+           pyStr += j > middle - i && j < middle + i ? "#" : " ";
+        }
+      }
+      console.log(pyStr);
+    }
+
+}
+function pyramidd(n) {
 
   
   // get the nth odd number
