@@ -8,6 +8,13 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
+    return str
+        .replace(/\W/g, '')
+            .split("")
+                .reduce((a, c) => a = c.toLowerCase().match(/^[aeiou]$/gi)? a + 1: a, 0);
+}
+
+function vowelss(str) {
     const vowels$ = [ 'a', 'e', 'i', 'o', 'u' ];
     return str
         .replace(/\W/g, '')
